@@ -93,25 +93,26 @@ while i <= N:
         ellipse(screen, (78, 45, 21), (x+450//k, y+585//k, 39//k, 94//k), 1)
 
 
-    draw_cat(250, 100 + (150*i), 2)
+    draw_cat(250, 100 + (150*1), 3)
     i += 1
+#_________________________________________________________________________
+coil_coord = [[350, 730],
+              [100, 640],
+              [530, 600],
+              [60, 480]]
 
-#coil_coord = [[520,4320],
-#              [720,720]]
-
-# clew клубок
-circle(screen, (153, 153, 153), (350, 730), 600)
-circle(screen, (78, 45, 21), (350, 730), 60, 1)
-
-
-
-# lines on the clew
-arc(screen, (78, 45, 21), (305, 700, 100, 80), 2, pi)
-arc(screen, (78, 45, 21), (315, 715, 100, 80), 2, pi)
-arc(screen, (78, 45, 21), (325, 730, 100, 80), 2, pi)
-arc(screen, (78, 45, 21), (295, 690, 100, 80), 6, pi/2)
-arc(screen, (78, 45, 21), (285, 710, 100, 80), -1/3, pi/5)
-
+for coord in coil_coord:
+    # clew клубок
+    circle(screen, (153, 153, 153), (coord[0], coord[1]), (coord[1]//13))
+    circle(screen, (78, 45, 21), (coord[0], coord[1]), (coord[1]//13), 1)
+    i = 100
+    j = 80
+    # lines on the clew
+    arc(screen, (78, 45, 21), (coord[0] - 45, coord[1] - 30, i, j), 2, pi)
+    arc(screen, (78, 45, 21), (coord[0] - 35, coord[1] - 15, i, j), 2, pi)
+    arc(screen, (78, 45, 21), (coord[0] - 25, coord[1] - 0, i, j), 2, pi)
+    arc(screen, (78, 45, 21), (coord[0] - 55, coord[1] - 40, i, j), 6, pi/2)
+    arc(screen, (78, 45, 21), (coord[0] - 65, coord[1] - 20, i, j), -1/3, pi/5)
 
 #_________________________________________________________________________
 pygame.display.update()
